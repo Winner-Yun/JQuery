@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive To-Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #4a90e2;
+      text-align: center;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    input {
+      width: 90%;
+    }
+
+    button {
+      background-color: #4a90e2;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #357ab7;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 10px;
+      margin: 5px 0;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .task-text {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .remove-btn {
+      color: red;
+      cursor: pointer;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1>Interactive To-Do List</h1>
+  <input type="text" id="new-task" placeholder="Enter a new task" />
+  <button id="add-task">Add Task</button>
+  <ul id="todo-list"></ul>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function() {
+      $('#add-task').on('click', function() {
+        const task = $('#new-task').val();
+        if (task) {
+          const listItem = `<li class="todo-item"><span class="task-text">${task}</span><span class="remove-btn">Remove</span></li>`;
+          $('#todo-list').append(listItem);
+          $('#new-task').val('');
+        }
+      });
+      $(document).on('click', '.task-text', function() {
+        $(this).toggleClass('completed');
+      });
+      $(document).on('click', '.remove-btn', function() {
+        $(this).parent().remove();
+      });
+    });
+  </script>
+</body>
+</html>

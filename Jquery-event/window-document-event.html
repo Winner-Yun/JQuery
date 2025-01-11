@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Window and Document Events</title>
+</head>
+<body>
+
+  <h1>Window and Document Events</h1>
+
+  <div style="height: 1000px;">
+    <p>Resize the browser or scroll the page to see events in action.</p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+
+      $(window).on('load', function() {
+        console.log('Page fully loaded!');
+      });
+
+      $(window).on('resize', function() {
+        console.log('Window resized!');
+      });
+
+      $(document).on('scroll', function() {
+        console.log('You are scrolling!');
+      });
+
+    });
+  </script>
+
+</body>
+</html>
