@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Demo</title>
+  <style>
+    .highlight {
+      background-color: yellow; /* Example highlight style */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="active">This div is active</div>
+  <div>This div is not active</div>
+
+  <ul>
+    <li>First list item</li>
+    <li>Second list item</li>
+    <li>Third list item</li>
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $('div').filter('.active').addClass('highlight');
+
+      $('li').first().addClass('highlight');
+
+      $('li').eq(2).css('color', 'blue');
+
+    });
+  </script>
+
+</body>
+</html>

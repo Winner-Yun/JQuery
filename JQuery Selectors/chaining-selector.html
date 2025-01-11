@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Demo</title>
+  <style>
+    .active {
+      color: red; /* Example style for active class */
+    }
+  </style>
+</head>
+<body>
+
+  <div id="main">
+    <p>This is the first paragraph.</p>
+    <p>This is the second paragraph.</p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $('#main') 
+        .find('p') 
+        .addClass('active')
+        .fadeIn(); 
+
+    });
+  </script>
+
+</body>
+</html>

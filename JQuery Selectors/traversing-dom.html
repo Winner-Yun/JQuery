@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Demo</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+
+    .parent-highlight {
+      border: 2px solid green;
+    }
+
+    .sibling-highlight {
+      border: 2px solid blue;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+  </div>
+
+  <div class="list">
+    <ul>
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+      <li id="item">List Item 3</li>
+      <li>List Item 4</li>
+    </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $('.container').find('p').addClass('highlight');
+
+      $('#item').parent().addClass('parent-highlight');
+
+      $('.list').children().addClass('highlight');
+
+      $('#item').siblings().addClass('sibling-highlight');
+
+    });
+  </script>
+
+</body>
+</html>
