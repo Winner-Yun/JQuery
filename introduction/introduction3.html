@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    p {
+      font-size: 1.2em;
+      color: #333;
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <p id="message">Click the button to hide this message.</p>
+  <button id="hide-message">Hide Message</button>
+
+  <script>
+    $(document).ready(function () {
+      $('#hide-message').click(function () {
+        $('#message').hide();
+      });
+    });
+  </script>
+</body>
+</html>
